@@ -1,27 +1,28 @@
 /****************************** DON'T ALTER ******************************/
 function fadeOut(el) {
-  el.classList.add("fade-up-out")
+  el.classList.add("fade-up-out");
   setTimeout(() => {
-    el.style.opacity = 0
-    el.classList.remove("fade-up-out")
-    el.style.pointerEvents = "none"
-  }, FADEDURATION)
+    el.style.opacity = 0;
+    el.classList.remove("fade-up-out");
+    el.style.pointerEvents = "none";
+  }, FADEDURATION);
 }
 
 function fadeIn(el) {
-  el.classList.add("fade-down-in")
+  el.classList.add("fade-down-in");
   setTimeout(() => {
-    el.style.opacity = 1
-    el.classList.remove("fade-down-in")
-    el.style.pointerEvents = "auto"
-  }, FADEDURATION)
+    el.style.opacity = 1;
+    el.classList.remove("fade-down-in");
+    el.style.pointerEvents = "auto";
+  }, FADEDURATION);
 }
+//
 
 function transitionPage(el, groupOut, groupIn) {
-  fadeAllOut(el, groupOut)
+  fadeAllOut(el, groupOut);
   setTimeout(() => {
-    fadeAllIn(groupIn)
-  }, LONGESTPOSSIBLE)
+    fadeAllIn(groupIn);
+  }, LONGESTPOSSIBLE);
 }
 /*************************************************************************/
 
@@ -33,24 +34,25 @@ function delayedFadeOut(div, range) {
 function delayedFadeIn(div, range) {
   // Your solution here
   setTimeout(() => fadeIn(div), range);
-
 }
 
 function fadeAllOut(el, group) {
   // Your solution here
   group.forEach(div => {
     if (div === el) {
-      delayedFadeOut(div, LONGRANGE)
+      delayedFadeOut(div, LONGRANGE);
     } else {
-      delayedFadeOut(div, SHORTRANGE)
+      delayedFadeOut(div, SHORTRANGE);
     }
-  })
+  });
 }
 
 function fadeAllIn(group) {
   // Your solution here
   let randEl = group[Math.floor(Math.random() * group.length)];
   group.forEach(div => {
-    div === randEl ? delayedFadeIn(div, LONGRANGE) : delayedFadeIn(div, SHORTRANGE)
-  })
+    div === randEl
+      ? delayedFadeIn(div, LONGRANGE)
+      : delayedFadeIn(div, SHORTRANGE);
+  });
 }
