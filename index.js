@@ -1,50 +1,50 @@
 /****************************** DON'T ALTER ******************************/
 function fadeOut(el) {
-  el.classList.add("fade-up-out")
+  el.classList.add("fade-up-out");
   setTimeout(() => {
-    el.style.opacity = 0
-    el.classList.remove("fade-up-out")
-    el.style.pointerEvents = "none"
-  }, FADEDURATION)
+    el.style.opacity = 0;
+    el.classList.remove("fade-up-out");
+    el.style.pointerEvents = "none";
+  }, FADEDURATION);
 }
 
 function fadeIn(el) {
-  el.classList.add("fade-down-in")
+  el.classList.add("fade-down-in");
   setTimeout(() => {
-    el.style.opacity = 1
-    el.classList.remove("fade-down-in")
-    el.style.pointerEvents = "auto"
-  }, FADEDURATION)
+    el.style.opacity = 1;
+    el.classList.remove("fade-down-in");
+    el.style.pointerEvents = "auto";
+  }, FADEDURATION);
 }
 
 function transitionPage(el, groupOut, groupIn) {
-  fadeAllOut(el, groupOut)
+  fadeAllOut(el, groupOut);
   setTimeout(() => {
-    fadeAllIn(groupIn)
-  }, LONGESTPOSSIBLE)
+    fadeAllIn(groupIn);
+  }, LONGESTPOSSIBLE); //hello
 }
 /*************************************************************************/
 
 function delayedFadeOut(div, range) {
   // Your solution here
-  fadeOut(div)
+  fadeOut(div);
 }
 
 function delayedFadeIn(div, range) {
   // Your solution here
-  fadeIn(div)
+  fadeIn(div);
 }
 
 function fadeAllOut(el, group) {
   // Your solution here
   group.forEach(div => {
-    delayedFadeOut(div)
-  })
+    delayedFadeOut(div);
+  });
 }
 
 function fadeAllIn(group) {
   // Your solution here
   group.forEach(div => {
-    delayedFadeIn(div)
-  })
+    delayedFadeIn(div);
+  });
 }
