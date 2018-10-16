@@ -16,7 +16,7 @@ function fadeIn(el) {
     el.style.pointerEvents = "auto"
   }, FADEDURATION)
 }
-
+c
 function transitionPage(el, groupOut, groupIn) {
   fadeAllOut(el, groupOut)
   setTimeout(() => {
